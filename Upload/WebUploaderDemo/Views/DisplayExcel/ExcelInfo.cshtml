@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "ExcelInfo";
+}
+
+<h2>ExcelInfo</h2>
+<script src="~/JS/jquery-1.7.1.min.js"></script>
+
+<script>
+    $(function(){
+
+        $("#ShowExcel").click(function () {
+            var adress = $("#ExcelAdress").val();//获取Excel地址
+            $.ajax({
+                type: "GET",
+                url: "/DisplayExcel/DisplayExcelInfo",
+                data: { Adress: adress},
+                dataType: "json",
+                success: function (data) {  
+                   
+                   
+                    for (var i = 0; i < data.length; i++) {
+                        $("#excel").append(getRow(data[i]));
+                    }
+                
+                }
+            });
+
+        })
+
+
+        function getRow(row) {
+            var tr = $('<tr></tr>');
+            for (var i in row) {
+                tr.append('<td>' + row[i] + '</td>');
+            }
+            return tr;
+        }
+
+
+
+        function getJsonObjLength(jsonObj) {
+             var Length = 0;
+             for (var item in jsonObj) {
+                       Length++;
+                  }
+              return Length;
+            
+        }
+        //html += '<tr>'
+        //    + '<td>' + comment['REGION_ID'] + '</td>' +
+        //    +'<td>' + comment['REGION_CODE'] + '</td>' +
+        //    +'<td>' + comment['REGION_NAME'] + '</td>' +
+        //    +'<td>' + comment['PARENT_ID'] + '</td>' +
+        //    +'<td>' + comment['REGION_LEVEL'] + '</td>' +
+        //    +'<td>' + comment['REGION_ORDER'] + '</td>' +
+        //    +'<td>' + comment['REGION_NAME_EN'] + '</td>' +
+        //    +'<td>' + comment['REGION_SHORTNAME_EN'] + '</td>' +
+        //    '</tr>'
+
+                            //var Length = getJsonObjLength(data);
+                    //for (var i = 0; i < Length; i++) {
+                    //    $("#excel").append("<tr>");
+                    //    $.each(data[i], function (commentIndex, comment) {
+
+                    //        $("#excel").append("<td>" + comment+"</td>");
+
+                    //    });
+                    //    $("#excel").append("<tr>");
+                    //}
+
+
+
+
+    } )
+</script>
+
+<input id="ExcelAdress" type="hidden" value="\\Data\\中国城市表.xls" />
+<input id="ShowExcel" type="button" value="展示excel" />
+   
+ <table id="excel" style="width:auto;height:auto">
+
+
+ </table>

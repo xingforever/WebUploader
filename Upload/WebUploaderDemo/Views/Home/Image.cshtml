@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Image";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/CSS/webuploader.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/CSS/style.css" rel="stylesheet" />
+    <link href="~/CSS/demo.css" rel="stylesheet" />
+    <link href="~/CSS/font-awesome.css" rel="stylesheet" />  @*//表示这个样式有点乱 调试不了*@
+ 
+    <script src="~/JS/jquery-1.8.2.min.js"></script>
+    <script src="~/JS/webuploader.js"></script>
+    <script src="~/JS/UploadImages.js"></script>
+
+</head>
+<body>
+    <table class="tc_table_cp" border="0">
+        <tr>
+            <td width="104">图片上传：</td>
+            <td colspan="3">
+                <div id="fileList">
+
+                </div>
+                <div class="cp_img_jia" id="filePicker"></div>
+            </td>
+        </tr>
+        <tr>
+            <td width="104"></td>
+            <td colspan="3">
+                <button id="ctlBtn" class="btn btn-default">开始上传</button>
+            </td>
+        </tr>
+    </table>
+
+    <a id="imagedownload" href="">下载</a>
+</body>
+</html>
+

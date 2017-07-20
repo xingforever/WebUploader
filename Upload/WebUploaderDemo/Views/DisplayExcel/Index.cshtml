@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="~/CSS/themes/default/easyui.css" rel="stylesheet" />
+    <link href="~/CSS/themes/icon.css" rel="stylesheet" />
+    <script src="~/JS/jquery-1.7.1.min.js"></script>
+    <script src="~/JS/jquery.easyui.min.js"></script>
+    <script src="~/JS/easyui-lang-zh_CN.js"></script>
+
+</head>
+<body>
+    <input  id="ExcelAdress" type="hidden" value="\\Data\\中国城市表.xls"/>
+    <input  id="ShowExcel" type="button"  value="展示excel"/>
+
+    <table id="dg"></table>
+
+
+    <div id="tb" style="padding:5px;height:auto">
+        <div style="margin-bottom:5px">
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true"><span>添加</span></a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true"><span>编辑</span></a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true"><span>删除</span></a>
+        </div>
+    </div>
+
+    <script src="~/JS/DisPlayDatatable.js"></script>
+ 
+
+</body>
+</html>
